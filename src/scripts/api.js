@@ -3,12 +3,12 @@ const config = {
 	method: 'GET',
 	headers: {
 		'X-RapidAPI-Key': 'c2186f1a43mshae85dd0ac049cdfp18a3a0jsn9ae3c85a850f',
-		'X-RapidAPI-Host': 'covid-193.p.rapidapi.com'
+        'X-RapidAPI-Host': 'covid-193.p.rapidapi.com'
 	}
 };
 
 async function getCountries(){
-    const response = await fetch(`${base_url}/countries`, config);
+    const response = await fetch(`${base_url}/countries/`, config);
     const data = await response.json();
     return data;
 }
@@ -19,4 +19,4 @@ async function getHistoryCountry(country, date){
     return data;
 }
 
-export {getCountries, getHistoryCountry};
+export { getCountries, getHistoryCountry };

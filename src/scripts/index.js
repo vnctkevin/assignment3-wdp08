@@ -45,7 +45,8 @@ searchRequest.addEventListener('submit', async function(e){
 
     const countryselect = selectCountries.value
     country.innerHTML = `- ${countryselect}`
-    const today = `${date.getFullYear()}-0${date.getMonth()+1}-0${date.getDate()}`;
+    //get today's date in YYYY-MM-DD format
+    const today = new Date().toISOString().slice(0, 10);
     const result = await getHistoryCountry(countryselect, today);
     
     const history_country = result.response[0];
